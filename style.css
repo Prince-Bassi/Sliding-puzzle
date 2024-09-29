@@ -1,0 +1,40 @@
+.puzzle, .puzzle .tile {
+       box-sizing: border-box;
+}
+
+:root {
+       --image: url("hathi.png");
+       --width: 300px;
+       --height: 300px;
+}
+
+.puzzle {
+       width: var(--width);
+       height: var(--height);
+       display: grid;
+       grid-template-columns: repeat(3, auto);
+       grid-template-rows: repeat(3, auto);
+       grid-gap: 2px;
+}
+
+.puzzle .tile {
+       background: var(--image);
+       background-size: var(--width) var(--height);
+       grid-row: var(--gridRow);
+       grid-column: var(--gridCol);
+       cursor: pointer;
+}
+
+.puzzle .empty {
+       background: transparent;
+}
+
+.puzzle .t1 {background-position: 0% 0%; --gridCol: 1; --gridRow: 1;}
+.puzzle .t2 {background-position: 50% 0%; --gridCol: 2; --gridRow: 1;}
+.puzzle .t3 {background-position: 100% 0%; --gridCol: 3; --gridRow: 1;}
+.puzzle .t4 {background-position: 0% 50%; --gridCol: 1; --gridRow: 2;}
+.puzzle .t5 {background-position: 50% 50%; --gridCol: 2; --gridRow: 2;}
+.puzzle .t6 {background-position: 100% 50%; --gridCol: 3; --gridRow: 2;}
+.puzzle .t7 {background-position: 0% 100%; --gridCol: 1; --gridRow: 3;}
+.puzzle .t8 {background-position: 50% 100%; --gridCol: 2; --gridRow: 3;}
+.puzzle .empty {--gridCol: 3; --gridRow: 3;}
